@@ -1,3 +1,4 @@
+// Copyright 2021 Artem Artemov <theartemka6@mail.ru>
 #include <any>
 #include "../include/header.hpp"
 using json = nlohmann::json;

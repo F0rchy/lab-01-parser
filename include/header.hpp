@@ -1,3 +1,4 @@
+// Copyright 2021 Artem Artemov <theartemka6@mail.ru>
 #ifndef INCLUDE_HEADER_HPP_
 #define INCLUDE_HEADER_HPP_
 
@@ -24,5 +25,6 @@ std::any get_debt(json* stt);
 std::pair<STUDENT_PAIR> parse_json(const json & jf);
 Lengths get_lengths(std::vector<Student> students);
 bool output(const std::vector<Student>& students, std::ostream& os);
+
 
 #endif  // INCLUDE_HEADER_HPP_
