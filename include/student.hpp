@@ -1,3 +1,4 @@
+// Copyright 2021 Artem Artemov <theartemka6@mail.ru>
 #ifndef INCLUDE_STUDENT_HPP_
 #define INCLUDE_STUDENT_HPP_
 
