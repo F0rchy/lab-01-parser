@@ -1,8 +1,9 @@
-#ifndef TEMPLATE_STUDENT_HPP
-#define TEMPLATE_STUDENT_HPP
+#ifndef INCLUDE_STUDENT_HPP_
+#define INCLUDE_STUDENT_HPP_
 
-#endif // TEMPLATE_STUDENT_HPP
+#endif  // INCLUDE_STUDENT_HPP_
 
+#include <string>
 #include "header.hpp"
 
 struct Student : public std::_Resetiosflags {
@@ -13,8 +14,8 @@ struct Student : public std::_Resetiosflags {
 };
 
 struct Lengths {
-  int name;
-  int group;
-  int avg;
-  int debt;
+  int name;   // Максимальная длина слова в name
+  int group;  //
+  int avg;    //
+  int debt;   //
 };
