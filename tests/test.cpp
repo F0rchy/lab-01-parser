@@ -17,10 +17,7 @@ TEST(Printing, tableTest) {
   stdt.debt = (std::string)"C++";
   stdt.avg = (int)5;
   students.push_back(stdt);
-  bool ok = output(students,ss);
-  if (!ok) {
-    std::cout << "Some problems with output table" << std::endl;
-  }
+  output(students,ss);
   ASSERT_EQ("|----------------|--------|------------|-----------|\n"
       "| name           | group  | avg        | debt      |\n"
       "|----------------|--------|------------|-----------|\n"
@@ -40,12 +37,7 @@ TEST(Printing, oneStudent) {
   stdt.debt = (int)4;
   stdt.avg = (int)5;
   students.push_back(stdt);
-  bool ok = output(students,ss);
-  //  bool ok = output(students,std::cout);
-  if (!ok) {
-    std::cout << "Some problems with output table" << std::endl;
-    //    return 0;
-  }
+  output(students,ss);
   ASSERT_EQ("|----------------|-------|-----|-----------|\n"
       "| name           | group | avg | debt      |\n"
       "|----------------|-------|-----|-----------|\n"
@@ -56,7 +48,7 @@ TEST(Printing, oneStudent) {
 
 TEST(Errorhandling, Meta) {
   std::stringstream ss;
-  std::pair<std::vector<Student>,std::string> pair = parse_json("../metaTest.json");
+  std::pair<std::vector<Student>,std::string> pair = parse_json("../jsons/metaTest.json");
   std::vector<Student> students = pair.first;
   if (pair.second != "") {
     ss << "Incorrect reading json file." << pair.second;
@@ -69,7 +61,7 @@ TEST(Errorhandling, Meta) {
 
 TEST(Errorhandling, NameNotString) {
   std::stringstream ss;
-  std::pair<std::vector<Student>,std::string> pair = parse_json("../nameTest.json");
+  std::pair<std::vector<Student>,std::string> pair = parse_json("../jsons/nameTest.json");
   std::vector<Student> students = pair.first;
   if (pair.second != "") {
     ss << "Incorrect reading json file." << pair.second;
@@ -82,7 +74,7 @@ TEST(Errorhandling, NameNotString) {
 
 TEST(Errorhandling, DebtProccessing) {
   std::stringstream ss;
-  std::pair<std::vector<Student>,std::string> pair = parse_json("../debtTest.json");
+  std::pair<std::vector<Student>,std::string> pair = parse_json("../jsons/debtTest.json");
   std::vector<Student> students = pair.first;
   if (pair.second != "") {
     ss << "Incorrect reading json file. " << pair.second;
@@ -95,7 +87,7 @@ TEST(Errorhandling, DebtProccessing) {
 
 TEST(Errorhandling, AvgProccessing) {
   std::stringstream ss;
-  std::pair<std::vector<Student>,std::string> pair = parse_json("../avgTest.json");
+  std::pair<std::vector<Student>,std::string> pair = parse_json("../jsons/avgTest.json");
   std::vector<Student> students = pair.first;
   if (pair.second != "") {
     ss << "Incorrect reading json file. " << pair.second;
@@ -108,7 +100,7 @@ TEST(Errorhandling, AvgProccessing) {
 
 TEST(Errorhandling, ItemsProccessing) {
   std::stringstream ss;
-  std::pair<std::vector<Student>,std::string> pair = parse_json("../itemsTest.json");
+  std::pair<std::vector<Student>,std::string> pair = parse_json("../jsons/itemsTest.json");
   std::vector<Student> students = pair.first;
   if (pair.second != "") {
     ss << "Incorrect reading json file. " << pair.second;
@@ -121,7 +113,7 @@ TEST(Errorhandling, ItemsProccessing) {
 
 TEST(Errorhandling, GroupProccessing) {
   std::stringstream ss;
-  std::pair<std::vector<Student>,std::string> pair = parse_json("../groupTest.json");
+  std::pair<std::vector<Student>,std::string> pair = parse_json("../jsons/groupTest.json");
   std::vector<Student> students = pair.first;
   if (pair.second != "") {
     ss << "Incorrect reading json file. " << pair.second;
