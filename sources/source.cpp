@@ -1,3 +1,4 @@
+// Copyright 2021 Artem Artemov <theartemka6@mail.ru>
 #include <any>
 #include "../include/header.hpp"
 
@@ -87,7 +88,6 @@ std::pair<std::vector<Student>, std::string> parse_json(const json & jf) {
     // NAME
     student.name = get_name(&stt);
     if (student.name == "") {
-
       answer.first = std::vector<Student>{};
       answer.second =
           "Incorrect name of Student " + to_string(stt.at("group"));
@@ -97,7 +97,6 @@ std::pair<std::vector<Student>, std::string> parse_json(const json & jf) {
     // GROUP
     student.group = get_group(&stt);
     if (!student.group.has_value()) {
-
       answer.first = std::vector<Student>{};
       answer.second =
           "Incorrect group of Student " + to_string(stt.at("group"));
@@ -107,7 +106,6 @@ std::pair<std::vector<Student>, std::string> parse_json(const json & jf) {
     // AVG
     student.avg = get_avg(&stt);
     if (!student.avg.has_value()) {
-
       answer.first = std::vector<Student>{};
       answer.second =
           "Incorrect avg of Student " + to_string(stt.at("avg"));
@@ -117,7 +115,6 @@ std::pair<std::vector<Student>, std::string> parse_json(const json & jf) {
     // DEBT
     student.debt = get_debt(&stt);
     if (!student.debt.has_value()) {
-
       answer.first = std::vector<Student>{};
       answer.second =
           "Incorrect debt of Student: " + to_string(stt.at("debt"));
@@ -136,7 +133,6 @@ Lengths get_lengths(std::vector<Student> students) {
   Lengths ls{0, 0, 0, 0};
 
   for (Student student1 : students) {
-
     if (static_cast<int>(student1.name.length()) > ls.name) {
       ls.name = static_cast<int>(student1.name.length());
     }
@@ -167,7 +163,6 @@ Lengths get_lengths(std::vector<Student> students) {
       }
 
     } else if (student1.avg.type() == typeid(std::string)) {
-
       if (static_cast<int>(std::any_cast<std::string>(student1.avg).length()) >
           ls.avg) {
         ls.avg =
@@ -186,7 +181,6 @@ Lengths get_lengths(std::vector<Student> students) {
     }
 
     if (student1.debt.type() == typeid(std::string)) {
-
       if (static_cast<int>(std::any_cast<std::string>(student1.debt).length()) >
           ls.debt) {
         ls.debt = static_cast<int>(
